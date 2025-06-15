@@ -1,0 +1,7 @@
+inherit_from: "configs/scannet/base_config.yaml"
+Dataset:
+  scene_id: "scene0062_00"
+
+scene:
+  bound: [[0.9,4.3],[-0.1,2.9],[-0.1,2.4]]
+  voxel_sdf: 0.06

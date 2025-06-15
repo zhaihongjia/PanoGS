@@ -1,0 +1,28 @@
+name: PanoGS
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - cudatoolkit=11.6
+  - plyfile=0.8.1
+  - python=3.7.13
+  - pip=22.3.1
+  - pytorch=1.12.1
+  - torchvision=0.13.1
+  - tqdm
+  - pip:
+    - submodules/simple-knn
+    - opencv-python==4.6.0.66
+    - munch
+    - trimesh
+    - open3d==0.17.0
+    - imgviz
+    - PyOpenGL
+    - glfw
+    - PyGLM
+    - wandb
+    - lpips
+    - rich
+    - ruff
+    - nerfstudio

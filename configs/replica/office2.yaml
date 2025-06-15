@@ -1,0 +1,7 @@
+inherit_from: "configs/replica/base_config.yaml"
+Dataset:
+  scene_id: "office2"
+
+scene:
+  bound: [[-3.6,3.2],[-3.0,5.5],[-1.4,1.7]]
+  voxel_sdf: 0.06
