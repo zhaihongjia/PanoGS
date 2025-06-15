@@ -60,6 +60,7 @@ You need to set some paths in the `config` file:
 
 ### 0. Datasets Download
 We use two indoor datasets, Replica and ScanNetV2, in our paper.
+
 Please refer to [Pre-process](./preprocess/README.md) to download the datasets.
 
 ### 1. Scene Reconstruction 
@@ -79,7 +80,9 @@ After scene reconstruction, `point_cloud` and `rendering` directories will be sa
 - `rendering`: Rendered results for debug and visualization.
 
 ### 2. Multi-view feature fusion and 2D segmentation
-In this part, we use VLM and the basic image segmentation model to process the data. All preprocessed data will be saved in `["generated_floder"]\["scene_id"]`.
+In this part, we use VLM and the Foundation 2D image segmentation model to process the data. 
+
+All preprocessed data will be saved in `["generated_floder"]\["scene_id"]`.
 
 Please refer to [Pre-process](./preprocess/README.md) for more details.
 
@@ -109,7 +112,7 @@ CUDA_VISIBLE_DEVICES=0 python run_segment.py --config ./configs/scannet/scene000
 CUDA_VISIBLE_DEVICES=0 python run_segment.py --config ./configs/replica/room0.yaml
 ```
 
-After 3D panoptic segmentation, `segmentation` directory will be saved `["save_dir"]\dataset_name\["scene_id"]`.
+After 3D panoptic segmentation, `segmentation` directory will be saved in `["save_dir"]\dataset_name\["scene_id"]`.
 
 - `segmentation`: 
   - `init_seg.npy`: Super-Gaussian (Graph node) for 1st clustering.
@@ -128,7 +131,7 @@ python eval_replica.py --pred_path your_results_path --gt_path ./datasets/replic
 
 - `pred_path`: Your results save path, it should be `["save_dir"]\dataset_name`. e.g. , `/mnt/nas_10/group/hongjia/PanopticGS-test/ScanNet` or `/mnt/nas_10/group/hongjia/PanopticGS-test/Replica`
 
-The 3D semantic segmentation results are saved under the corresponding dir:
+The 3D semantic segmentation results are saved in `["save_dir"]\dataset_name\["scene_id"]`:
 - `pre_semantic.npy`: 3D semantic segmentation results for each category
 - `eval_pointwise_semantic.txt`: 3D semantic segmentation results for each category
 
@@ -208,5 +211,3 @@ If you found this code/work to be useful in your own research, please considerin
     pages     = {14114-14124}
 }
 ```
-
-
